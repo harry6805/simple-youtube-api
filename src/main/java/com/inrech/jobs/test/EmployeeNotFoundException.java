@@ -1,0 +1,7 @@
+package com.inrech.jobs.test;
+
+public class EmployeeNotFoundException extends RuntimeException {
+    EmployeeNotFoundException(Long id) {
+        super("Could not find employee " + id);
+    }
+}
