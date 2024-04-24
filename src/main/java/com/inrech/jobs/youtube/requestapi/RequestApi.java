@@ -19,14 +19,14 @@ public class RequestApi {
         ExchangeFilterFunction errorResponseFilter = ExchangeFilterFunction
                 .ofResponseProcessor(RequestApi::exchangeFilterResponseProcessor);
 
-        HttpClient httpClient = HttpClient.create()
+        /*HttpClient httpClient = HttpClient.create()
                 .tcpConfiguration(tcpClient -> tcpClient
                         .proxy(proxy -> proxy
                                 .type(ProxyProvider.Proxy.SOCKS5)
                                 .host("127.0.0.1")
                                 .port(9000))).noSSL();
-        ReactorClientHttpConnector connector = new ReactorClientHttpConnector(httpClient);
-        this.client = WebClient.builder().clientConnector(connector)
+        ReactorClientHttpConnector connector = new ReactorClientHttpConnector(httpClient);*/
+        this.client = WebClient.builder() //.clientConnector(connector)
                 .baseUrl(apiBaseUrl)
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .defaultHeader(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE)
